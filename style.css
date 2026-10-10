@@ -72,11 +72,11 @@ button { font-family: inherit; cursor: pointer; color: inherit; }
 .story-picture { font-size: 5rem; }
 .story-card h2 { font-size: 2rem; margin: 4px 0 12px; color: #219ebc; }
 .story-text {
-  font-size: 1.8rem;
-  line-height: 1.8;
+  font-size: 1.5rem;
+  line-height: 1.7;
   text-align: left;
 }
-.story-text p { margin: 0 0 6px; }
+.story-text p { margin: 0 0 18px; }
 .word {
   cursor: pointer; border-radius: 6px; padding: 0 2px;
   -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
@@ -157,5 +157,5 @@ button { font-family: inherit; cursor: pointer; color: inherit; }
 
 @media (max-width: 500px) {
   header h1 { font-size: 1.3rem; }
-  .story-text { font-size: 1.5rem; }
+  .story-text { font-size: 1.3rem; }
 }
