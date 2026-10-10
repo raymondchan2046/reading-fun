@@ -1,0 +1,161 @@
+* { box-sizing: border-box; }
+
+/* iPad / touch: no grey tap flash, no double-tap zoom, no text-size jumps on rotate */
+html { -webkit-text-size-adjust: 100%; }
+* { -webkit-tap-highlight-color: transparent; }
+button, .word { touch-action: manipulation; }
+
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Segoe UI", Arial, sans-serif;
+  background: #fff8e7;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+  background: #ffcc4d;
+  box-shadow: 0 3px 0 #e6b030;
+}
+header h1 { margin: 0; font-size: 1.8rem; flex: 1; text-align: center; }
+.star-total { font-size: 1.6rem; font-weight: bold; }
+
+main { max-width: 760px; margin: 0 auto; padding: 20px 16px max(60px, env(safe-area-inset-bottom)); }
+
+button { font-family: inherit; cursor: pointer; color: inherit; }
+
+.home-btn {
+  font-size: 1.1rem;
+  padding: 10px 16px;
+  min-height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.hello { font-size: 1.6rem; text-align: center; }
+
+/* Story list */
+.story-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+.story-tile {
+  background: #fff;
+  border: 4px solid #8ecae6;
+  border-radius: 20px;
+  padding: 16px 8px;
+  text-align: center;
+  font-size: 1.3rem;
+  transition: transform 0.1s;
+}
+.story-tile:active { transform: scale(0.96); }
+.story-tile .pic { font-size: 3.5rem; display: block; }
+.story-tile .stars { font-size: 1.2rem; display: block; margin-top: 6px; min-height: 1.5em; }
+
+/* Story */
+.story-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 20px 24px;
+  border: 4px solid #8ecae6;
+  text-align: center;
+}
+.story-picture { font-size: 5rem; }
+.story-card h2 { font-size: 2rem; margin: 4px 0 12px; color: #219ebc; }
+.story-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  text-align: left;
+}
+.story-text p { margin: 0 0 6px; }
+.word {
+  cursor: pointer; border-radius: 6px; padding: 0 2px;
+  -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+}
+.word:active { background: #ffe8a3; }
+.word.speaking { background: #ffcc4d; }
+
+.big-btn {
+  font-size: 1.4rem;
+  padding: 12px 24px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 16px;
+  background: #219ebc;
+  color: #fff;
+  box-shadow: 0 4px 0 #156b80;
+}
+.big-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #156b80; }
+.tip { color: #888; font-size: 1rem; }
+
+/* Questions */
+.quiz { margin-top: 24px; }
+.question {
+  background: #fff;
+  border-radius: 20px;
+  border: 4px solid #ffcc4d;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.question h3 {
+  font-size: 1.5rem;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.say-btn {
+  border: none;
+  background: #ffe8a3;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.choices { display: grid; gap: 10px; }
+.choice {
+  font-size: 1.4rem;
+  text-align: left;
+  padding: 12px 16px;
+  border: 3px solid #ddd;
+  border-radius: 14px;
+  background: #fafafa;
+}
+.choice:active:not(:disabled) { border-color: #219ebc; }
+
+/* Hover effects only for a mouse; on iPad they would "stick" after a tap */
+@media (hover: hover) {
+  .story-tile:hover { transform: scale(1.05); }
+  .word:hover { background: #ffe8a3; }
+  .choice:hover:not(:disabled) { border-color: #219ebc; }
+}
+.choice.correct { background: #c8f7c5; border-color: #3aa835; }
+.choice.wrong { background: #ffd1d1; border-color: #e05555; }
+.choice:disabled { cursor: default; }
+.feedback { font-size: 1.4rem; margin-top: 10px; min-height: 1.6em; }
+
+/* Result */
+.result {
+  text-align: center;
+  background: #fff;
+  border-radius: 24px;
+  border: 4px solid #3aa835;
+  padding: 24px;
+  font-size: 1.6rem;
+}
+.result .big-stars { font-size: 3.5rem; letter-spacing: 6px; }
+
+@media (max-width: 500px) {
+  header h1 { font-size: 1.3rem; }
+  .story-text { font-size: 1.5rem; }
+}

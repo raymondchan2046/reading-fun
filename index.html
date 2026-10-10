@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- iPad: run full screen when added to the Home Screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Reading Fun">
+  <meta name="theme-color" content="#ffcc4d">
+  <title>Reading Fun!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button id="home-btn" class="home-btn" hidden>🏠 Home</button>
+    <h1>📖 Reading Fun!</h1>
+    <div class="star-total">⭐ <span id="star-total">0</span></div>
+  </header>
+
+  <!-- Home: list of stories -->
+  <main id="home-screen">
+    <p class="hello">Pick a story to read!</p>
+    <div id="story-list" class="story-list"></div>
+  </main>
+
+  <!-- Reading + questions -->
+  <main id="story-screen" hidden>
+    <div class="story-card">
+      <div class="story-picture" id="story-picture"></div>
+      <h2 id="story-title"></h2>
+      <div id="story-text" class="story-text"></div>
+      <button id="read-btn" class="big-btn">🔊 Read to me</button>
+      <p class="tip">Tip: tap a word to hear it!</p>
+    </div>
+
+    <div id="quiz" class="quiz"></div>
+
+    <div id="result" class="result" hidden></div>
+  </main>
+
+  <script src="stories.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
